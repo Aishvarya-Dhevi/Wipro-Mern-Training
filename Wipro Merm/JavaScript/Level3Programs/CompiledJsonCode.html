@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product CRUD</title>
+    <style>
+        body { font-family: Arial; }
+    </style>
+</head>
+<body>
+
+<h3>Product Management Operations</h3>
+
+<button onclick="fetchProducts()">Fetch Products</button>
+<button onclick="addProduct()">Add Product</button>
+<button onclick="updateProduct()">Update Product</button>
+<button onclick="deleteProduct()">Delete Product</button>
+
+<ul id="products"></ul>
+
+<script>
+    // Local JSON data
+    let products = JSON.parse(`[
+        {"item":"Laptop","price":60000},
+        {"item":"Mouse","price":500},
+        {"item":"Keyboard","price":700},
+        {"item":"Speaker","price":5000}
+    ]`);
+
+    const ul = document.getElementById("products");
+
+    // GET – Fetch products
+    function fetchProducts() {
+        ul.innerHTML = ""; // clear list
+        products.forEach((product, index) => {
+            const li = document.createElement("li");
+            li.textContent = `ID: ${index} | Item: ${product.item} | Price: ₹${product.price}`;
+            ul.appendChild(li);
+        });
+    }
+
+    // POST – Add product
+    function addProduct() {
+        const item = prompt("Enter product name:");
+        const price = prompt("Enter product price:");
+
+        if (item && price) {
+            products.push({ item, price: Number(price) });
+            alert("Product added successfully");
+            fetchProducts();
+        }
+    }
+
+    // PUT – Update product
+    function updateProduct() {
+        const id = prompt("Enter product ID to update:");
+        if (products[id]) {
+            const newItem = prompt("Enter new product name:");
+            const newPrice = prompt("Enter new price:");
+
+            products[id] = {
+                item: newItem,
+                price: Number(newPrice)
+            };
+
+            alert("Product updated successfully");
+            fetchProducts();
+        } else {
+            alert("Invalid product ID");
+        }
+    }
+
+    // DELETE – Delete product
+    function deleteProduct() {
+        const id = prompt("Enter product ID to delete:");
+
+        if (products[id]) {
+            products.splice(id, 1);
+            alert("Product deleted successfully");
+            fetchProducts();
+        } else {
+            alert("Invalid product ID");
+        }
+    }
+</script>
+
+</body>
+</html>
