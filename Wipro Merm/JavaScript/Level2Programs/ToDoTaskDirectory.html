@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Task Directory</title>
+</head>
+<body>
+
+<h3>Company Todo Task Directory</h3>
+
+<ul id="todoList"></ul>
+
+<script>
+  fetch("https://jsonplaceholder.typicode.com/todos")
+    .then(response => response.json())
+    .then(data => {
+
+      const ul = document.getElementById("todoList");
+
+      data.slice(0, 5).forEach(todo => {
+
+        const li = document.createElement("li");
+
+        li.textContent = 
+          `User ID: ${todo.userId} | Task ID: ${todo.id} | Completed: ${todo.completed}`;
+        ul.append(li);
+      });
+    })
+
+    .catch(error => { console.error("Failed to fetch todo tasks", error);
+    });
+</script>
+
+</body>
+</html>
+

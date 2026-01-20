@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Price Calculation</title>
+</head>
+<body>
+
+<script>
+  // Original product prices
+  const prices = [3000, 1500, 2500, 4000];
+
+  // 1. Print original prices
+  document.writeln("Original Prices: " + prices + "<br><br>");
+
+  // 2. Calculate discounted prices (10%)
+  const discountedPrices = prices.map(price => price - (price * 0.10));
+  document.writeln("Discounted Prices (10% off): " + discountedPrices + "<br><br>");
+
+  // 3. Filter discounted prices greater than 2000
+  const filteredPrices = discountedPrices.filter(price => price > 2000);
+  document.writeln("Filtered Prices (>2000): " + filteredPrices + "<br><br>");
+
+  // 4. Calculate total accumulated price
+  const totalPrice = discountedPrices.reduce((sum, price) => sum + price, 0);
+  document.writeln("Total Accumulated Price: " + totalPrice);
+</script>
+
+</body>
+</html>
