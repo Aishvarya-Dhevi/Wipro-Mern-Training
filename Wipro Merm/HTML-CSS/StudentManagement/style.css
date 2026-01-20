@@ -1,0 +1,194 @@
+/* ===============================
+   GLOBAL STYLING
+   =============================== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef2f7;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: linear-gradient(to right, #4a90e2, #50e3c2);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 50px;      /* adjust as needed */
+    height: 50px;
+    border-radius: 5px;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: #ffeb3b;
+}
+
+/* ===============================
+   HERO WELCOME SECTION
+   =============================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('https://img.freepik.com/free-photo/city-building-along-road-daytime_181624-45987.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    z-index: 1;
+}
+
+/* ===============================
+   SECTIONS
+   =============================== */
+.section {
+    padding: 30px;
+    margin: 25px auto;
+    max-width: 1000px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.section h1 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #34495e;
+}
+
+/* ===============================
+   TABLE STYLING
+   =============================== */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+}
+
+table thead {
+    background-color: #4a90e2;
+    color: white;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f8ff;
+}
+
+table tbody tr:hover {
+    background-color: #d1e7fd;
+    transition: 0.3s;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.footer {
+    text-align: center;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: white;
+    padding: 15px 10px;
+    font-weight: bold;
+    box-shadow: 0 -3px 5px rgba(0,0,0,0.1);
+}
+
+/* ===============================
+   RESPONSIVE MOBILE VIEW
+   =============================== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 20px;
+        margin: 15px 10px;
+    }
+
+    .logo h2 {
+        font-size: 1.2rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 1.5rem;
+    }
+}
