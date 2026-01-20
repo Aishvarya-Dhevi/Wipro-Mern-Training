@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Monthly Activities</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <h2>Spring Flowers School</h2>
+  </div>
+</header>
+
+<section class="section">
+  <h1>Monthly Activities</h1>
+
+  <select onchange="filterActivities(this.value)" class="form-control mb-3">
+    <option value="">Select Subject</option>
+    <option value="Maths">Maths</option>
+    <option value="Science">Science</option>
+    <option value="English">English</option>
+  </select>
+
+  <ul id="activityList"></ul>
+</section>
+
+<footer class="footer">
+  © 2026 Spring Flowers School
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
