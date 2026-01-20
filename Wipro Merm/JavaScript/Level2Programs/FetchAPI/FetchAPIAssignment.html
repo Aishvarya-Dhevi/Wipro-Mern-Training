@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Assignment</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #78efff;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Blog Posts</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Post ID</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody id="postsTable"></tbody>
+</table>
+
+<h2>Todo List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Todo ID</th>
+            <th>Task</th>
+            <th>Completed</th>
+        </tr>
+    </thead>
+    <tbody id="todosTable"></tbody>
+</table>
+
+<p id="error" class="error"></p>
+
+<script>
+/* =========================
+   MODULE PATTERN
+   ========================= */
+const AppModule = (function () {
+
+    const POSTS_API = "https://jsonplaceholder.typicode.com/posts";
+    const TODOS_API = "https://jsonplaceholder.typicode.com/todos";
+
+    const postsTable = document.getElementById("postsTable");
+    const todosTable = document.getElementById("todosTable");
+    const errorBox = document.getElementById("error");
+
+    async function fetchData(url) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error("Server error while fetching data");
+            }
+            return await response.json();
+        } catch (error) {
+            errorBox.textContent = error.message;
+            return [];
+        }
+    }
+
+    function displayPosts(posts) {
+        posts.slice(0,5).forEach(post => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${post.id}</td>
+                <td>${post.title}</td>
+            `;
+            postsTable.append(row);
+        });
+    }
+
+    function displayTodos(todos) {
+        todos.slice(0,5).forEach(todo => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${todo.id}</td>
+                <td>${todo.title}</td>
+                <td>${todo.completed}</td>
+            `;
+            todosTable.append(row);
+        });
+    }
+
+    async function init() {
+        console.log("Fetching posts...");
+        const posts = await fetchData(POSTS_API);
+        displayPosts(posts);
+
+        console.log("Fetching todos...");
+        const todos = await fetchData(TODOS_API);
+        displayTodos(todos);
+
+        console.log("Meanwhile, rest of the application is running");
+    }
+
+    return { init };
+
+})();
+
+AppModule.init();
+</script>
+
+</body>
+</html>
