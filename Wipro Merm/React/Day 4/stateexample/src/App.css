@@ -1,0 +1,54 @@
+/* App.css */
+
+.app-container {
+  min-height: 100vh;                 /* full screen height */
+  display: flex;
+  flex-direction: column;            /* stack vertically */
+  align-items: center;               /* center horizontally */
+  justify-content: center;           /* center vertically */
+  gap: 30px;                         /* space between elements */
+  background: linear-gradient(135deg, #e58fff, #dbeafe); /* nice gradient */
+  color: #111;                       /* dark text for visibility */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Forms */
+form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;                   /* make responsive */
+  justify-content: center;
+}
+
+input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+/* Headings */
+h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Course List */
+p {
+  margin: 4px 0;
+  text-align: center;
+}
