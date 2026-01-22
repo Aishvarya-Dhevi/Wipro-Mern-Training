@@ -1,0 +1,9 @@
+{
+  "courses": [
+    { "id": 1, "name": "React",  "duration": "30 days" },
+    { "id": 2, "name": "Java",   "duration": "45 days" },
+    { "id": 3, "name": "Python", "duration": "28 days" },
+    { "id": 4, "name": "DotNet", "duration": "45 days" },
+    { "id": 5, "name": "Html-css", "duration": "20 days" }
+  ]
+}
