@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Running Shoes",
+      "price": 2000,
+      "description": "Comfortable running shoes",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+      "category": "shoes"
+    },
+    {
+      "id": 2,
+      "name": "Sneakers",
+      "price": 1500,
+      "description": "Daily wear shoes",
+      "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772",
+      "category": "shoes"
+    },
+    {
+      "name": "Women Jacket",
+      "price": "3000",
+      "description": "Best for winter",
+      "image": "https://i.pinimg.com/736x/ca/6b/91/ca6b9122c932308d126a8153f968f1df.jpg",
+      "category": "jackets-sale",
+      "id": 4
+    },
+    {
+      "name": "Titan",
+      "price": "15000",
+      "description": "Best in town",
+      "image": "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "watches",
+      "id": 5
+    }
+  ]
+}
